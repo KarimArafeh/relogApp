@@ -7,15 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBox x:Name="txt_data" HorizontalAlignment="Left" Height="128" Margin="126,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="229" FontSize="36" FontWeight="Bold" FontStyle="Italic" TextChanged="txt_data_TextChanged"/>
+        <TextBox x:Name="txt_data" HorizontalAlignment="Left" Height="76" Margin="156,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="204" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
         <Menu x:Name="menuFitxer" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="109">
-            <MenuItem FontFamily="A3 Lineas" Background="Transparent" Header="fitxer">
-                <MenuItem Header="Exit"/>
+            <MenuItem x:Name="ItemFitxer" FontFamily="A3 Lineas" Background="Transparent" Header="fitxer">
+                <CheckBox x:Name="cbAlarmaOn" Content="Alarma On" Click="cbAlarmaOn_Click"/>
+                <MenuItem x:Name="Exit" Header="Exit" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Ajuda">
-                <MenuItem Header="sobre aquest programa"/>
+                <MenuItem Header="sobre aquest programa" Click="Sobre_Click"/>
             </MenuItem>
         </Menu>
+        <TextBox x:Name="txtAlarmHora" HorizontalAlignment="Left" Height="21" Margin="187,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.169"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="lblAlarmHora" Content="Hora de alarma :" HorizontalAlignment="Left" Margin="86,261,0,0" VerticalAlignment="Top" Width="106" Visibility="Hidden"/>
+        <Button x:Name="btSave" Content="Save" HorizontalAlignment="Left" Margin="374,265,0,0" VerticalAlignment="Top" Width="75" Click="btSave_Click" Visibility="Hidden"/>
 
     </Grid>
 </Window>
